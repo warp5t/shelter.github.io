@@ -1,0 +1,12 @@
+._container{
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.wrap{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background-color:#FFFFFF ;
+}

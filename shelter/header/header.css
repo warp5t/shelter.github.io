@@ -11,6 +11,7 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: inherit;
+  padding: 0 40px 0 40px;
 }
 
 .header__wrap-logo {
@@ -40,7 +41,10 @@
   color: #FFFFFF;
 }
 
-.header__navigation {}
+.header__navigation {
+  align-self: flex-end;
+  padding: 0 0 20px 0;
+}
 
 .header__navigation-list {
   display: flex;
@@ -48,7 +52,12 @@
   justify-content: flex-end;
 }
 
-.header__navigation-item {}
+.header__navigation-item {
+
+}
+.header__navigation-item:not(:last-child){
+  padding: 0 35px 0 0 ;
+}
 
 .header__item {
   font-family: 'Arial';
@@ -57,4 +66,15 @@
   font-size: 15px;
   line-height: 160%;
   color: #CDCDCD;
+  transition-duration: 0.5s;
+}
+.header__item:hover {
+  cursor: pointer;
+  color: #FAFAFA;
+  transition-duration: 0.2s;
+}
+._item-choice{
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+
 }

@@ -1,0 +1,69 @@
+.our-friends {
+}
+.our-friends__container {
+}
+
+.our-friends__title {
+}
+.our-friends__wrap-carousel {
+}
+.carousel {
+}
+.carousel__box-cards {
+}
+.carousel__mover {
+}
+.carousel__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 90px 0 0;
+  background: #FAFAFA;
+}
+.box-carousel__card:hover {
+  cursor: pointer;
+}
+.carousel__wrap-photo {
+  padding: 0 0 30px 0;
+}
+.carousel__photo {
+}
+.carousel__name-pet {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  padding: 0 0 30px 0;
+  text-align: center;
+}
+.carousel__wrap-button {
+  padding: 0 0 30px 0;
+}
+.carousel__button {
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  padding: 15px 45px;
+  box-sizing: content-box;
+  background: #FAFAFA;
+  transition-duration: 0.5s;
+}
+.box-carousel__button:hover {
+  transition-duration: 0.2s;
+  background: #FDDCC4;
+}
+.our-friends__wrap-controller {
+}
+.our-friends__force-L {
+}
+.our-friends__normal-L {
+}
+.our-friends__number {
+}
+.our-friends__force-R {
+}
+.our-friends__normal-R {
+}

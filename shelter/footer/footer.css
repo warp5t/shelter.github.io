@@ -38,15 +38,7 @@ padding: 0 0 45px 0;
 .footer__icon-post {
   padding: 0 20px 0 0;
 }
-.footer__email {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3;
-}
+
 .footer__wrap-phone {
   
 }
@@ -58,15 +50,7 @@ padding: 0 0 45px 0;
   display: inline-block;
   padding: 0 20px 0 0;
 }
-.footer__phone {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  color: #F1CDB3
-}
+
 .footer__wrap-map {
   padding: 0 0 40px 0;
 }
@@ -79,7 +63,7 @@ padding: 0 0 45px 0;
   display: inline-block;
   padding: 0 20px 0 0;
 }
-.footer__adress {
+.footer__contact {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;

@@ -2,10 +2,11 @@
 .about__container {
   display: flex;
   justify-content: center;
-  padding: 80px 40px 100px 40px;
+  padding: 94px 40px 100px 40px;
 }
 .about__wrap-cat-dog {
   padding: 0 120px 0 0;
+  margin: -14px 0 0px 0;
 }
 .about__image-cat-dog {
   
@@ -22,6 +23,7 @@ line-height: 130%;
 letter-spacing: 0.06em;
 color: #545454;
 padding: 0 0 25px 0;
+letter-spacing: 4px;
 }
 .about__text {
 font-family: 'Arial';

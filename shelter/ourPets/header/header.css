@@ -22,8 +22,9 @@
 }
 
 .header__title {
-
+ padding: 0 0 10px 0;
 }
+
 .header__link-title{
   font-family: 'Georgia';
   font-style: normal;

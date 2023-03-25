@@ -16,7 +16,7 @@
   font-size: 35px;
   line-height: 130%;
   text-align: center;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #545454;
   padding: 0 0 45px 0;
 }
@@ -27,17 +27,20 @@
   align-items: center;
 }
 
-.carousel {}
+.carousel {
+
+}
 
 .carousel__box-cards {
   overflow: hidden;
   padding: 15px 0px 15px 0;
+  margin: 0 0 45px 0;
 }
 
 .carousel__mover {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -20px 0 -20px;
+  margin: -30px -20px 0 -20px;
 }
 
 .carousel__card {
@@ -46,7 +49,7 @@
   justify-content: center;
   align-items: center;
   background: #FAFAFA;
-  margin: 0 20px 0 20px;
+  margin: 30px 20px 0 20px;
   transition-duration: 0.5s;
 }
 
@@ -86,7 +89,7 @@
 .carousel__button {
   border: 2px solid #F1CDB3;
   border-radius: 100px;
-  padding: 15px 45px;
+  padding: 15px 60px;
   box-sizing: content-box;
   background: #FAFAFA;
   transition-duration: 0.5s;

@@ -1,24 +1,47 @@
 .help {
+  padding: 0 10px 0 10px;
 }
+
 .help__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 80px 0 100px 0;
 }
-._container {
+@media(max-width:935px) {
+  .help__container {
+    padding: 80px 0 96px 0;
+  }
 }
+@media(max-width:400px) {
+  .help__container {
+    padding: 49px 0 96px 0;
+  }
+}
+._container {}
+
 .help__title {
-font-family: 'Georgia';
-font-style: normal;
-font-weight: 400;
-font-size: 35px;
-line-height: 130%;
-letter-spacing: 0.08em;
-color: #545454;
-padding: 0 0 5px 0;
-text-align: center;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.08em;
+  color: #545454;
+  padding: 0 0 5px 0;
+  text-align: center;
 }
+@media(max-width:385px){
+  .help__title {
+    font-size: 30px;
+  }
+}
+@media(max-width:340px){
+  .help__title {
+    font-size: 25px;
+  }
+}
+
 .help__wrap-offers {
   display: flex;
   flex-direction: row;
@@ -27,6 +50,23 @@ text-align: center;
   flex-wrap: wrap;
   margin: 0 -60px 0 -60px;
 }
+
+@media(max-width:935px) {
+  .help__wrap-offers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+@media(max-width:742px) {
+  .help__wrap-offers {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr); 
+  }
+}
+
 .help__offer-card {
   display: flex;
   flex-direction: column;
@@ -34,17 +74,61 @@ text-align: center;
   justify-content: center;
   padding: 55px 62px 0 60px;
 }
+@media(max-width:935px) {
+  .help__offer-card {
+    padding: 55px 32px 0 32px;
+  }
+}
+@media(max-width:540px) {
+  .help__offer-card {
+    padding: 55px 12px 0 12px;
+  }
+}
+@media(max-width:540px) {
+  .help__offer-card {
+    padding: 31px 18px 0 18px;
+  }
+}
 .help__wrap-icon {
-  padding: 0 0 30px 0;
+  
+}
+@media(max-width:935px) {
+  .help__wrap-icon {
+    padding: 0px 0px 32px 0px;
+  }
+}@media(max-width:400px) {
+  .help__wrap-icon {
+    padding: 0px 0px 20px 0px;
+  }
 }
 .help__icon {
+
+}
+@media(max-width:400px){
+  .help__icon {
+    display: none;
+  }
+}
+.help__icon-320{
+  display: none;
+}
+@media(max-width:400px){
+  .help__icon-320 {
+    display: inline-block;
+  }
 }
 .help__text {
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
+  line-height: 110%;
+  letter-spacing: 0.1em;
   color: #545454;
+  white-space:nowrap;
+}
+@media(max-width:475px) {
+  .help__text {
+    font-size: 15px;
+  }
 }

@@ -100,6 +100,9 @@ padding: 0 0 10px 0;
 .header__wrap-burger {
   display: none;
 }
+.header__wrap-burger:hover {
+ cursor: pointer;
+}
 
 @media(max-width:740px){
   .header__wrap-burger {

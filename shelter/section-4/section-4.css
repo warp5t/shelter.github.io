@@ -88,6 +88,11 @@
   .help__offer-card {
     padding: 31px 18px 0 18px;
   }
+  @-moz-document url-prefix(){
+    .help__offer-card {
+      padding: 31px 9px 0 0px;
+    }
+  }
 }
 .help__wrap-icon {
   

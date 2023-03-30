@@ -129,6 +129,11 @@ padding: 0 0 20px 0;
     text-align: unset;
     white-space: nowrap;
   }
+  @-moz-document url-prefix(){
+    .in-addition__name-type-bank {
+      font-size: 13px;
+    }
+  }
 }
 .in-addition__wrap-number-card {
   display: inline-flex;
@@ -164,6 +169,11 @@ color: #545454;
 @media(max-width:410px){
   .in-addition__number {
     font-size: 15px;
+  }
+  @-moz-document url-prefix(){
+    .in-addition__number {
+      font-size: 13.5px;
+    }
   }
 }
 

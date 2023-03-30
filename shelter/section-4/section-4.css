@@ -15,7 +15,7 @@
 }
 @media(max-width:400px) {
   .help__container {
-    padding: 49px 0 96px 0;
+    padding: 49px 0 40px 0;
   }
 }
 ._container {}

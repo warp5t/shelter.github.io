@@ -268,3 +268,211 @@ color: #292929;
     right: 43px;
   }
 }
+
+/* ------------------------ popUP ------------------------ */
+
+.our-friends__popUp {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1c1c80;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.8s ease 0s;
+  z-index: 90;
+}
+.tech-visible{
+  opacity: 1;
+  visibility: visible;
+}
+.popUp {
+}
+.popUp__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.popUp__content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+  height: 500px;
+  border-radius: 9px;
+  background: #FAFAFA;
+  color: #000000;
+}
+
+.popUp__close{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+}
+.popUp__close:hover{
+  cursor: pointer;
+}
+
+.popUp__wrap-cross{
+  padding: 4px 0 0 0;
+}
+
+.popUp__icon-cross{
+  display: inline-block;
+}
+
+.popUp__wrap-photo {
+}
+.popUp__photo {
+  width: 500px;
+  height: 500px;
+}
+.popUp__wrap-info {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px 88px 20px;
+}
+.popUp__name {
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 130%;
+letter-spacing: 0.09em;
+color: #000000;
+padding: 0 0 10px 0;
+}
+.popUp__species {
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 115%;
+letter-spacing: 0.06em;
+color: #000000;
+padding: 0 0 40px 0;
+}
+.popUp__about {
+font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 110%;
+letter-spacing: 0.07em;
+color: #000000;
+padding: 0 0 40px 0;
+}
+.popUp__subwrapInf {
+  display: flex;
+  flex-direction: column;
+}
+.popUp__dot{
+  width: 4px;
+  height: 4px;
+  background: #F1CDB3;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+  align-self: center;
+}
+.popUp__wrap-age {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 0;
+}
+.popUp__age {
+  font-family: 'Georgia';
+font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 110%;
+letter-spacing: 0.06em;
+color: #000000;
+}
+.pop__age-term {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popUp__wrap-inocul {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 0;
+}
+.popUp__inocul {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popUp__inocul-term {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popUp__wrap-disease {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 0;
+}
+.popUp__disease {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popUp__disease-term {
+  font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 110%;
+letter-spacing: 0.06em;
+color: #000000;
+}
+.popUp__wrap-parasite {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 0;
+}
+.popUp__parasite {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popUp__parasite-term {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}

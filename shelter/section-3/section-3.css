@@ -79,11 +79,21 @@
   }
 }
 
+.box-carousel__limiter-length{
+  position: relative;
+  width: 990px;
+  height: 440px;
+  overflow: hidden;
+}
+
 .box-carousel__cards-list {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-  width: 990px;
+  width: 100%;
+  transition-duration: 0.6s;
 }
 @media(max-width:1141px){
   .box-carousel__cards-list {
@@ -220,6 +230,7 @@ color: #292929;
   border-radius: 100px;
   transition-duration: 0.5s;
   margin: 0 53px 0 0;
+  user-select: none;
 }
 .box-carousel__button-arrow-L:hover {
   transition-duration: 0.2s;
@@ -248,6 +259,7 @@ color: #292929;
   border-radius: 100px;
   transition-duration: 0.5s;
   margin: 0 0 0 53px;
+  user-select: none;
 }
 
 .box-carousel__button-arrow-R:hover {

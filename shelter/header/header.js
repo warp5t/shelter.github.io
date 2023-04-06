@@ -28,7 +28,7 @@ shadow.onclick = activateBurger;
 
 
 window.onload = function() {
-  var links = document.querySelectorAll('a');  
+  var links = document.querySelectorAll('a');
 
   links.forEach(function (item) {
     item.addEventListener('click', onLinkClicked);

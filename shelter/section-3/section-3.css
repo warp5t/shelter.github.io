@@ -82,13 +82,29 @@
 .box-carousel__limiter-length{
   position: relative;
   width: 990px;
-  height: 440px;
+  height: 460px;
   overflow: hidden;
+}
+
+@media(max-width:1170px){
+  .box-carousel__limiter-length{
+    width: 910px;
+  }
+}
+@media(max-width:1055px){
+  .box-carousel__limiter-length{
+    width: 580px;
+  }
+}
+@media(max-width:740px){
+  .box-carousel__limiter-length{
+    width: 280px;
+  }
 }
 
 .box-carousel__cards-list {
   position: absolute;
-  top: 0;
+  top: 10px;
   left: 0;
   display: flex;
   justify-content: space-between;
@@ -127,7 +143,7 @@
 }
 .box-carousel__card:hover{
   cursor: pointer;
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
   transition-duration: 0.2s;
 }
 @media(max-width:800px) {

@@ -98,7 +98,7 @@ let popUp  = document.querySelector('.our-friends__popUp');
 const leftBtn = document.querySelector('.box-carousel__button-arrow-L');
 const rigthBtn = document.querySelector('.box-carousel__button-arrow-R');
 
-let cardsFriend;
+let cardsFriend = document.querySelectorAll('.box-carousel__card');;
 let cardInit = document.querySelector('.box-carousel__card');
 let friendPhoto = document.querySelector('.box-carousel__photo');
 let friendName = document.querySelector('.box-carousel__name-pet');
@@ -110,9 +110,9 @@ close.onclick = function(){
 }
 
 let arrRand = [];
-let cardClone;
+// let cardClone;
 let counterStep = 0;
-let duratinon = 1000;
+let duratinon = 5000;
 let permissionBtn = true;
 let sizeMove = 1080;
 
@@ -120,6 +120,116 @@ function permissing(){
   setTimeout(() => {
     permissionBtn = true;
   }, duratinon + 500);
+}
+
+window.addEventListener('resize',function(){
+  autoRun();
+})
+
+function autoRun(){
+  if(window.outerWidth <= 1170 && window.outerWidth > 1055){
+    sizeMove = 920;
+  }
+  else if(window.outerWidth <= 1055 && window.outerWidth > 740){
+    randoming();
+    sizeMove = 580;
+  }
+  else if( window.outerWidth <= 740){
+    randoming();
+    sizeMove = 280;
+  }
+}
+autoRun();
+
+function cardRemoving(direct){
+  let counter = 0;
+  if(window.outerWidth > 1055 && direct == 'left'){
+    while(counter <= 2){
+      counter++;
+     cardsFriend = document.querySelectorAll('.box-carousel__card');
+     cardsFriend[cardsFriend.length -1].remove();
+     arrRand.shift();
+    }
+  }
+  else if(window.outerWidth > 1055 && direct == 'right'){
+    while(counter <= 2){
+      counter++;
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[0].remove();
+      arrRand.shift();
+     }
+  }
+  else if(window.outerWidth <= 1055 && direct == 'left'){
+    while(counter <= 1){
+      counter++;
+     cardsFriend = document.querySelectorAll('.box-carousel__card');
+     cardsFriend[cardsFriend.length -1].remove();
+     arrRand.shift();
+    }
+  }
+  else if(window.outerWidth <= 1055 && direct == 'right'){
+    while(counter <= 1){
+      counter++;
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[0].remove();
+      arrRand.shift();
+     }
+  }
+  else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'left'){
+    while(counter < 2){
+      counter++;
+     cardsFriend = document.querySelectorAll('.box-carousel__card');
+     cardsFriend[cardsFriend.length -1].remove();
+     arrRand.shift();
+    }
+  }
+ else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'right'){
+  while(counter < 2){
+    counter++;
+    cardsFriend = document.querySelectorAll('.box-carousel__card');
+    cardsFriend[0].remove();
+    arrRand.shift();
+   }
+  }
+}
+
+function cardFilling(direct){
+  if(window.outerWidth > 1055 && direct === 'right'){
+     while(cardsFriend.length != 6){
+        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+        cardAdding(rNumber,'right');
+      }
+  }
+  else if(window.outerWidth <= 1055 && direct === 'right'){
+    while(cardsFriend.length != 4){
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber,'right');
+    }
+  }
+  else if(window.outerWidth > 1055 && direct === 'left'){
+    while(cardsFriend.length != 6){
+       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+       cardAdding(rNumber,'left');
+     }
+  }
+  else if(window.outerWidth <= 1055 && direct === 'left'){
+   while(cardsFriend.length != 4){
+     rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+     cardAdding(rNumber,'left');
+   }
+ }
+ else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'right'){
+  while(cardsFriend.length != 2){
+    rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+    cardAdding(rNumber,'right');
+  }
+}
+else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'left'){
+  while(cardsFriend.length != 2){
+    rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+    cardAdding(rNumber,'left');
+  }
+}
 }
 
 leftBtn.onclick = function(){
@@ -130,36 +240,28 @@ leftBtn.onclick = function(){
     if(counterStep === 0){
       containerCards.style.transitionDuration = 'unset';
       containerCards.style.left = (-1) * sizeMove + 'px';
-     while(arrRand.length != 6){
-       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-       cardAdding(rNumber,'left');
-     }
+      cardFilling('left');
      setTimeout(() => {
        containerCards.style.transitionDuration = duratinon + 'ms';
        containerCards.style.left = 0 + 'px';
      }, 200);
-     counterStep++;
      cardsFriend = document.querySelectorAll('.box-carousel__card');
+     counterStep = 1;
    }
    else if(counterStep === 1 || counterStep === 3){
+    console.log(counterStep, ' - counterStep - before');
      let counter = 0;
-
      containerCards.style.transitionDuration = 'unset';
-     containerCards.style.left = -1080 + 'px';
-     while(counter <= 2){
-       counter++;
-      cardsFriend = document.querySelectorAll('.box-carousel__card');
-      cardsFriend[cardsFriend.length -1].remove();
-      arrRand.shift();
-     }
-     while(arrRand.length != 6){
-       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-       cardAdding(rNumber,'left');
-     }
+     containerCards.style.left = (-1) * sizeMove + 'px';
+     console.log(arrRand,' - arrRand');
+     cardRemoving('left');
+     cardFilling('left');
+     console.log(arrRand,' - arrRand');
      setTimeout(() => {
        containerCards.style.left = 0 + 'px';
        containerCards.style.transitionDuration = duratinon + 'ms';
      }, 100);
+     cardsFriend = document.querySelectorAll('.box-carousel__card');
      counterStep = 1;
      }
      else if(counterStep === 2){
@@ -173,7 +275,7 @@ leftBtn.onclick = function(){
       //containerCards.style.transitionDuration = duratinon + 'ms';
      }
   }
-  console.log(counterStep, ' - counterStep');
+  console.log(counterStep, ' - counterStep - after');
 }
 
 rigthBtn.onclick = function(){
@@ -181,16 +283,14 @@ rigthBtn.onclick = function(){
   if(permissionBtn === true){
     permissing();
      if(counterStep == 0){
-      while(arrRand.length != 6){
-        containerCards.style.transitionDuration = 'unset';
-        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-        cardAdding(rNumber,'right');
-      }
+      containerCards.style.transitionDuration = 'unset';
+      cardFilling('right');
        setTimeout(() => {
         containerCards.style.transitionDuration = duratinon + 'ms';
         containerCards.style.left = (-1) * sizeMove + 'px';
        }, 100);
        counterStep = 4;
+       cardsFriend = document.querySelectorAll('.box-carousel__card');
     }
     else if(counterStep == 1){
       containerCards.style.left = (-1) * sizeMove + 'px';
@@ -206,28 +306,26 @@ rigthBtn.onclick = function(){
       let counter = 0;
         containerCards.style.transitionDuration = 'unset';
         containerCards.style.left = 0 + 'px';
-        while(counter <= 2){
-        counter++;
-        cardsFriend = document.querySelectorAll('.box-carousel__card');
-        cardsFriend[0].remove();
-        arrRand.shift();
-       }
-       while(arrRand.length != 6){
-        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-        cardAdding(rNumber,'right');
-      }
-      setTimeout(() => {
+        cardRemoving('right');
+        cardFilling('right');
+        setTimeout(() => {
         containerCards.style.transitionDuration = duratinon + 'ms';
         containerCards.style.left = (-1) * sizeMove + 'px';
       }, 100);
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
     }
   }
-  console.log(counterStep, ' - counterStep');
+  console.log(counterStep, ' - counterStep - after');
 }
 
 function cardAdding(rNumber,direct){
-   if(!arrRand.includes(rNumber)){
-        cardClone = cardInit.cloneNode(true);
+  console.log(arrRand, ' - arrRand cardAdding');
+ //   for(let i = 0; cardsFriend.length > i; i++){
+      //  console.log(cardsFriend[i].id);
+ //     if(!cardsFriend[i].id != (arrPetsInfo[rNumber].name)){
+        if(!arrRand.includes(rNumber)){
+          let cardClone;
+          cardClone = cardInit.cloneNode(true);
         arrRand.push(rNumber);
         cardClone.childNodes[3].innerText = `${arrPetsInfo[rNumber].name}`;
         cardClone.childNodes[1].childNodes[1].src = `${arrPetsInfo[rNumber].img}`;
@@ -238,26 +336,55 @@ function cardAdding(rNumber,direct){
         else if(direct == 'right'){
           containerCards.append(cardClone);
         }
-    }
+      }
+  //  }
+ //   }
     cardsFriend = document.querySelectorAll('.box-carousel__card');
 }
 
 function randoming(){
   let rNumber;
-    while(arrRand.length != 3){
+  if(window.outerWidth > 1055){
+  while(arrRand.length != 3){
       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
       cardAdding(rNumber,'left');
     }
-    cardsFriend = document.querySelectorAll('.box-carousel__card');
     cardsFriend[3].remove();
+  }
+    else if(window.outerWidth <= 1055 && window.outerWidth > 740){
+      cardsFriend.forEach(function(item){
+        item.remove();
+      })
+      arrRand.length = 0;
+      while(arrRand.length != 2){
+        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+        cardAdding(rNumber,'left');
+      }
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+
+    }
+    else if(window.outerWidth <= 740){
+      cardsFriend.forEach(function(item){
+        item.remove();
+      })
+      arrRand.length = 0;
+      while(arrRand.length != 1){
+        rNumber = Math.floor(Math.random() * (7));
+        cardAdding(rNumber,'left');
+      }
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+
+    }
+       cardsFriend = document.querySelectorAll('.box-carousel__card');
 }
 
-randoming()
+randoming();
 
 cardsFriend.forEach(function(item){
   item.addEventListener('click', function(){
     popUp.classList.add('tech-visible');
     document.body.style.overflow = 'hidden';
+    console.log(item.id);
     if(item.id == 'Katrine'){
       photo.src = arrPetsInfo[4].img;
       name.innerText = arrPetsInfo[4].name;

@@ -100,9 +100,11 @@
   border-bottom: 3px solid #F1CDB3;;
 
 }
-
+ /* ------------------------------------- burger -------------------------------- */
 .header__wrap-burger {
+  position: relative;
   display: none;
+  z-index: 50;
 }
 .header__wrap-burger:hover {
  cursor: pointer;
@@ -131,6 +133,77 @@
 .burger__line {
   width: 30px;
   height: 2px;
-  background-color: #000000;;
+  background-color: #F1CDB3;
   margin: 9px 0px;
+}
+
+.rotate{
+  transform: rotate(90deg);
+  transition-duration: 0.5s;
+}
+
+/*  ---------------------- menu-burger ---------------------------- */
+
+.header__menu-burger {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 320px;
+  background-color: #292929;
+  z-index: 49;
+  padding: 248px 0 0 0;
+  transition-duration: 0.5s;
+}
+.shift{
+  right: 0px;
+  transition-duration: 0.5s;
+}
+.menu-burger {
+}
+.menu-burger__container {
+}
+.menu-burger__navigation {
+  
+}
+.menu-burger__navigation-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu-burger__navigation-item:not(:last-child) {
+  padding: 0 0 40px 0;
+}
+
+.menu-burger__item {
+font-family: 'Arial';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 160%;
+color: #CDCDCD;
+}
+.menu-burger__item:first-child {
+ padding: 0 0 7px 0;
+}
+
+.body-block-scroll{
+  overflow: hidden;
+}
+
+.shadow-pets{
+ position: fixed;
+ top: 0;
+ opacity: 0;
+ overflow: hidden;
+ background-color: #29292986;
+ z-index: 48;
+ transition: all 0.8s ease 0s;
+}
+
+.shadow-activ-pets{
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 1;
+  overflow: visible;
+  transition: all 0.8s ease 0s;
 }

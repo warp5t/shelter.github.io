@@ -35,7 +35,10 @@ window.onload = function() {
 
     function onLinkClicked(event) {
       event.preventDefault();
-      setTimeout(onAnimationComplete, 500);
+      setTimeout(onAnimationComplete, 500); 
+      if(item.id == 'shelter'){
+        activateBurger();
+      }
     }
 
     function onAnimationComplete() {

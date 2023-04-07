@@ -362,6 +362,8 @@
   opacity: 1;
   visibility: visible;
 }
+
+/* -------------------------------- popUp ----------------------------------- */
 .popUp {
 }
 .popUp__container {
@@ -381,6 +383,18 @@
   background: #FAFAFA;
   color: #000000;
 }
+@media(max-width:1000px){
+  .popUp__content {
+    width: 630px;
+    height: 350px;
+  }
+}
+@media(max-width:645px){
+  .popUp__content {
+    width: 240px;
+    height: 100%;
+  }
+}
 
 .popUp__close{
   display: flex;
@@ -393,9 +407,18 @@
   height: 52px;
   border: 2px solid #F1CDB3;
   border-radius: 100px;
+  transition-duration: 0.5s;
+}
+@media(max-width:645px){
+  .popUp__close{
+    right: -30px;
+  }
 }
 .popUp__close:hover{
   cursor: pointer;
+  border: 2px solid #ec690c;
+  background-color: #ecbd9b;
+  transition-duration: 0.5s;
 }
 
 .popUp__wrap-cross{
@@ -409,13 +432,34 @@
 .popUp__wrap-photo {
 }
 .popUp__photo {
-  width: 500px;
-  height: 500px;
+  width: 493px;
+  height: 493px;
+}
+@media(max-width:1000px){
+  .popUp__photo {
+    width: 344px;
+    height: 344px;
+  }
+}
+@media(max-width:645px){
+  .popUp__photo {
+    display: none;
+  }
 }
 .popUp__wrap-info {
   display: flex;
   flex-direction: column;
   padding: 50px 20px 88px 20px;
+}
+@media(max-width:1000px){
+  .popUp__wrap-info {
+    padding: 10px 10px 40px 10px;
+  }
+}
+@media(max-width:645px){
+  .popUp__wrap-info {
+    padding:10px;
+  }
 }
 .popUp__name {
 font-family: 'Georgia';
@@ -427,6 +471,11 @@ letter-spacing: 0.09em;
 color: #000000;
 padding: 0 0 10px 0;
 }
+@media(max-width:645px){
+  .popUp__name {
+    text-align: center;
+  }
+}
 .popUp__species {
 font-family: 'Georgia';
 font-style: normal;
@@ -437,6 +486,16 @@ letter-spacing: 0.06em;
 color: #000000;
 padding: 0 0 40px 0;
 }
+@media(max-width:1000px){
+  .popUp__species {
+    padding: 0 0 20px 0;
+  }
+}
+@media(max-width:1000px){
+  .popUp__species {
+    text-align: center;
+  }
+}
 .popUp__about {
 font-family: 'Georgia';
 font-style: normal;
@@ -446,6 +505,17 @@ line-height: 110%;
 letter-spacing: 0.07em;
 color: #000000;
 padding: 0 0 40px 0;
+}
+@media(max-width:1000px){
+  .popUp__about {
+    font-size: 13px;
+    padding: 0 0 20px 0;
+  }
+}
+@media(max-width:1000px){
+  .popUp__about {
+    padding: 0 0 25px 0;
+  }
 }
 .popUp__subwrapInf {
   display: flex;
@@ -463,6 +533,11 @@ padding: 0 0 40px 0;
   display: flex;
   flex-direction: row;
   padding: 0 0 10px 0;
+}
+@media(max-width:645px){
+  .popUp__wrap-age {
+  padding: 0 0 5px 0;
+  }
 }
 .popUp__age {
   font-family: 'Georgia';
@@ -487,6 +562,11 @@ color: #000000;
   flex-direction: row;
   padding: 0 0 10px 0;
 }
+@media(max-width:645px){
+  .popUp__wrap-inocul {
+  padding: 0 0 5px 0;
+  }
+}
 .popUp__inocul {
   font-family: 'Georgia';
   font-style: normal;
@@ -510,6 +590,11 @@ color: #000000;
   flex-direction: row;
   padding: 0 0 10px 0;
 }
+@media(max-width:645px){
+  .popUp__wrap-disease {
+   padding: 0 0 5px 0;
+  }
+}
 .popUp__disease {
   font-family: 'Georgia';
   font-style: normal;
@@ -532,6 +617,11 @@ color: #000000;
   display: flex;
   flex-direction: row;
   padding: 0 0 10px 0;
+}
+@media(max-width:645px){
+  .popUp__wrap-parasite {
+   padding: 0 0 5px 0;
+  }
 }
 .popUp__parasite {
   font-family: 'Georgia';

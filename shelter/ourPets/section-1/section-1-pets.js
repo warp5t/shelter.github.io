@@ -61,6 +61,7 @@ const close = document.querySelector('.popUp__close');
 let body = document.getElementById('body');
 let visible = document.querySelector('.tech-visible');
 let popUp  = document.querySelector('.carousel__popUp');
+let popUpContainer = document.querySelector('.popUp__container');
 
 
 close.onclick = function(){
@@ -119,7 +120,7 @@ const petsInfo = {
   tiSp:'Cat - British Shorthair',
   tiAbout:"Timmy is an adorable grey british shorthair male. He loves to play and snuggle. He is neutered and up to date on age appropriate vaccinations. He can be chatty and enjoys being held. Timmy has a lot to say and wants a person to share his thoughts with.",
   tiAge:'2 years 3 months',
-  tiInoc: 'calicivirus, viral rhinotracheitis',
+  tiInoc: 'calicivirus',
   tiDis: 'kidney stones',
   tiParas: 'none',
   tiSrc: 'section-1/pets-timmy.png',
@@ -137,8 +138,8 @@ const petsInfo = {
   chSp:'Dog - Jack Russell Terrier ',
   chAbout:"This cute boy, Charly, is three years old and he likes adults and kids. He isn’t fond of many other dogs, so he might do best in a single dog home. Charly has lots of energy, and loves to run and play. We think a fenced yard would make him very happy.",
   chAge:'3 years old',
-  chInoc: 'bordetella bronchiseptica, leptospirosis',
-  chDis: 'deafness, blindness',
+  chInoc: 'leptospirosis',
+  chDis: 'deafness',
   chParas: 'lice, fleas',
   chSrc: 'section-1/pets-charly.jpg',
 };
@@ -230,6 +231,13 @@ cards.forEach(function(item,index){
       parasite.innerText = petsInfo.frParas;
     }
   })
+})
+
+popUpContainer.addEventListener('click',function(item){
+  if(item.target.id == 'container-popUp'){
+    popUp.classList.remove('tech-visible');
+    document.body.style.overflow = 'initial';
+  }
 })
 
 // -------------------- slide move -----------------------------

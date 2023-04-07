@@ -103,7 +103,6 @@
   height: inherit;
   overflow: hidden;
   transition-duration: 1000ms;
-  background-color: green;
 }
 @media(max-width:1280px){
   .carousel__mover {
@@ -234,10 +233,6 @@
   margin: 0 10px 0 0;
 }
 
-/* .our-friends__force-L:hover {
-  cursor: pointer;
-} */
-
 @media(max-width:400px){
   .our-friends__force-L {
     margin: 0 5px 0 0;
@@ -262,9 +257,6 @@
   margin: 0 10px;
   transition-duration: 0.5s;
 }
-/* .our-friends__normal-L:hover {
-  cursor: pointer;
-} */
 @media(max-width:400px){
   .our-friends__normal-L {
     margin: 0 5px;
@@ -313,11 +305,6 @@
   margin: 0 10px;
   transition-duration: 0.5s;
 }
-/* .our-friends__force-R:hover {
-  cursor: pointer;
-  background: #FDDCC4;
-  transition-duration: 0.2s;
-} */
 @media(max-width:400px){
   .our-friends__force-R {
     margin: 0 5px;
@@ -341,11 +328,7 @@
   margin: 0 0 0 10px;
   transition-duration: 0.5s;
 }
-/* .our-friends__normal-R:hover {
-  cursor: pointer;
-  background: #FDDCC4;
-  transition-duration: 0.2s;
-} */
+
 @media(max-width:400px){
   .our-friends__normal-R {
     margin: 0 0 0 5px;

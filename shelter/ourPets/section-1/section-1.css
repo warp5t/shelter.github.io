@@ -68,9 +68,21 @@
   padding: 15px 0px 15px 0;
   margin: 0 0 45px 0;
 }
+@media(max-width:1279px){
+  .carousel__box-cards {
+  height:1420px;
+  width: 592px;
+  }
+}
 @media(max-width:780px){
   .carousel__box-cards {
     margin: 0 0 20px 0;
+  }
+}
+@media(max-width:645px){
+  .carousel__box-cards {
+  height:1420px;
+  width: 283px;
   }
 }
 @media(max-width:350px){
@@ -88,14 +100,20 @@
   flex-direction: column;
   margin: -30px -20px 0 -20px;
   width: 7425px;
-  height: 934px;
+  height: inherit;
   overflow: hidden;
-  transition-duration: 800ms;
+  transition-duration: 1000ms;
   background-color: green;
 }
 @media(max-width:1280px){
   .carousel__mover {
     justify-content: center;
+  }
+}
+@media(max-width:1279px){
+  .carousel__mover {
+    width: 4980px;
+    flex-direction: column;
   }
 }
 
@@ -107,32 +125,9 @@
   background: #FAFAFA;
   margin: 30px 20px 0 20px;
   transition-duration: 0.5s;
+  width: 270px;
+  height: 435px;
 }
-
-/* @media(max-width:1279px){
-  .carousel__card:nth-child(8) {
-    display: none;
-  }
-  .carousel__card:nth-child(7) {
-    display: none;
-  }
-}
-@media(max-width:770px){
-  .carousel__card {
-    margin: 27px 20px 0 20px;
-  }
-}
-@media(max-width:659px){
-  .carousel__card:nth-child(5) {
-    display: none;
-  }
-  .carousel__card:nth-child(6) {
-    display: none;
-  }
-  .carousel__card:nth-child(4) {
-    display: none;
-  }
-} */
 
 .carousel__card:hover {
   cursor: pointer;
@@ -239,9 +234,9 @@
   margin: 0 10px 0 0;
 }
 
-.our-friends__force-L:hover {
+/* .our-friends__force-L:hover {
   cursor: pointer;
-}
+} */
 
 @media(max-width:400px){
   .our-friends__force-L {
@@ -265,10 +260,11 @@
   letter-spacing: 0px;
   color: #CDCDCD;
   margin: 0 10px;
+  transition-duration: 0.5s;
 }
-.our-friends__normal-L:hover {
+/* .our-friends__normal-L:hover {
   cursor: pointer;
-}
+} */
 @media(max-width:400px){
   .our-friends__normal-L {
     margin: 0 5px;
@@ -291,6 +287,7 @@
   background: #F1CDB3;
   color: #292929;
   margin: 0 10px;
+  transition-duration: 0.5s;
 }
 @media(max-width:400px){
   .our-friends__number {
@@ -304,24 +301,23 @@
   justify-content: center;
   width: 52px;
   height: 52px;
-  border: 2px solid #CDCDCD;
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0px;
-  color: #292929;
-  border: 2px solid #F1CDB3;
+  color: #CDCDCD;
+  border: 2px solid #CDCDCD;
   border-radius: 100px;
   margin: 0 10px;
   transition-duration: 0.5s;
 }
-.our-friends__force-R:hover {
+/* .our-friends__force-R:hover {
   cursor: pointer;
   background: #FDDCC4;
   transition-duration: 0.2s;
-}
+} */
 @media(max-width:400px){
   .our-friends__force-R {
     margin: 0 5px;
@@ -333,28 +329,36 @@
   justify-content: center;
   width: 52px;
   height: 52px;
-  border: 2px solid #CDCDCD;
   font-family: 'Georgia';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0px;
-  color: #292929;
-  border: 2px solid #F1CDB3;
+  color: #CDCDCD;
+  border: 2px solid #CDCDCD;
   border-radius: 100px;
   margin: 0 0 0 10px;
   transition-duration: 0.5s;
 }
-.our-friends__normal-R:hover {
+/* .our-friends__normal-R:hover {
   cursor: pointer;
   background: #FDDCC4;
   transition-duration: 0.2s;
-}
+} */
 @media(max-width:400px){
   .our-friends__normal-R {
     margin: 0 0 0 5px;
   }
+}
+
+.activ-button{
+  border: 2px solid #F1CDB3;
+  color: #292929;
+}
+.hover-button{
+  background-color: #F1CDB3;
+  cursor: pointer;
 }
 
 /*  -------------------- popUP ------------------------------ */

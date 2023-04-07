@@ -58,7 +58,7 @@ padding: 0 0 10px 0;
   align-self: flex-end;
   padding: 0 0 20px 0;
 }
-@media(max-width:766px){
+@media(max-width:767px){
   .header__navigation {
     display: none;
   }
@@ -107,7 +107,7 @@ padding: 0 0 10px 0;
  cursor: pointer;
 }
 
-@media(max-width:766px){
+@media(max-width:767px){
   .header__wrap-burger {
     display: block;
     margin: 46px 0 0 0;

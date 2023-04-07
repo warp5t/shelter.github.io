@@ -62,7 +62,7 @@
 .header__navigation {
   align-self: center
 }
-@media(max-width:760px){
+@media(max-width:767px){
   .header__navigation {
     display: none;
   }
@@ -110,7 +110,7 @@
  cursor: pointer;
 }
 
-@media(max-width:760px){
+@media(max-width:767px){
   .header__wrap-burger {
     display: block;
     margin: 49px 23px 0 0;

@@ -112,7 +112,7 @@ close.onclick = function(){
 let arrRand = [];
 // let cardClone;
 let counterStep = 0;
-let duratinon = 5000;
+let duratinon = 1000;
 let permissionBtn = true;
 let sizeMove = 1080;
 

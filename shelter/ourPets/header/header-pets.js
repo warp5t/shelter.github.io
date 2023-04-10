@@ -26,13 +26,14 @@ helpLinkPets.onclick = activateBurgerPets;
 petsPets.onclick = activateBurgerPets;
 shadowPets.onclick = activateBurgerPets;
 
+let aboutShelter = document.getElementById('about-shelter');
+aboutShelter.onclick = activateBurgerPets;
 
 window.onload = function() {
   var links = document.querySelectorAll('a');
 
   links.forEach(function (item) {
     item.addEventListener('click', onLinkClickedPets);
-
     function onLinkClickedPets(event) {
       event.preventDefault();
       setTimeout(onAnimationCompletePets, 500);

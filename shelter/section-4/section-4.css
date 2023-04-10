@@ -95,7 +95,7 @@
   }
 }
 .help__wrap-icon {
-  
+  padding: 0 0 32px 0;
 }
 @media(max-width:935px) {
   .help__wrap-icon {

@@ -363,9 +363,10 @@
   visibility: visible;
 }
 
-/* -------------------------------- popUp ----------------------------------- */
+
 .popUp {
 }
+
 .popUp__container {
   display: flex;
   justify-content: center;
@@ -420,7 +421,14 @@
   background-color: #ecbd9b;
   transition-duration: 0.5s;
 }
-
+@media (hover: hover){
+  .popUp__close:hover{
+    cursor: pointer;
+    border: 2px solid #ec690c;
+    background-color: #ecbd9b;
+    transition-duration: 0.5s;
+  }
+}
 .popUp__wrap-cross{
   padding: 4px 0 0 0;
 }
@@ -446,6 +454,7 @@
     display: none;
   }
 }
+
 .popUp__wrap-info {
   display: flex;
   flex-direction: column;
@@ -491,7 +500,7 @@ padding: 0 0 40px 0;
     padding: 0 0 20px 0;
   }
 }
-@media(max-width:1000px){
+@media(max-width:645px){
   .popUp__species {
     text-align: center;
   }
@@ -512,7 +521,7 @@ padding: 0 0 40px 0;
     padding: 0 0 20px 0;
   }
 }
-@media(max-width:1000px){
+@media(max-width:645px){
   .popUp__about {
     padding: 0 0 25px 0;
   }

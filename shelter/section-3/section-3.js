@@ -1,6 +1,4 @@
-
-const arrPetsInfo = [
-  {
+const arrPetsInfo = [{
     "name": "Jennifer",
     "img": "section-3/pets-jennifer.png",
     "breed": "Dog - Labrador",
@@ -93,7 +91,7 @@ let parasite = document.querySelector('.popUp__parasite-term');
 const close = document.querySelector('.popUp__close');
 let body = document.getElementById('body');
 let visible = document.querySelector('.tech-visible');
-let popUp  = document.querySelector('.our-friends__popUp');
+let popUp = document.querySelector('.our-friends__popUp');
 
 const leftBtn = document.querySelector('.box-carousel__button-arrow-L');
 const rigthBtn = document.querySelector('.box-carousel__button-arrow-R');
@@ -104,288 +102,518 @@ let friendPhoto = document.querySelector('.box-carousel__photo');
 let friendName = document.querySelector('.box-carousel__name-pet');
 let containerCards = document.querySelector('.box-carousel__cards-list');
 
-close.onclick = function(){
+close.onclick = function () {
   popUp.classList.remove('tech-visible');
   document.body.style.overflow = 'initial';
 }
 
 let arrRand = [];
-// let cardClone;
+let direction740;
 let counterStep = 0;
 let duratinon = 1000;
 let permissionBtn = true;
+let resizePermiss = true;
 let sizeMove = 1080;
 
-function permissing(){
+let collectionCards = [];
+
+function movePermissing() {
   setTimeout(() => {
     permissionBtn = true;
   }, duratinon + 500);
 }
 
-window.addEventListener('resize',function(){
-  autoRun();
+function resizePermissing(){
+ setTimeout(() => {
+  resizePermiss = true;
+ }, 500);
+}
+
+window.addEventListener('resize', function () {
+  if(resizePermiss == true){
+    resizePermiss = false;
+    autoRun();
+    resizePermissing();
+  }
 })
 
-function autoRun(){
-  if(window.outerWidth <= 1170 && window.outerWidth > 1055){
+function autoRun() {
+  if(window.outerWidth > 1170){
+    randoming();
+    setTimeout(() => {
+      randoming();
+    }, 500);
+    sizeMove = 1080;
+  }
+  else if (window.outerWidth <= 1170 && window.outerWidth > 1055) {
+    randoming();
+    setTimeout(() => {
+      randoming();
+    }, 500);
     sizeMove = 920;
   }
-  else if(window.outerWidth <= 1055 && window.outerWidth > 740){
+else  if (window.outerWidth <= 1055 && window.outerWidth > 740) {
     randoming();
-    sizeMove = 580;
+    setTimeout(() => {
+      randoming();
+    }, 500);
+    sizeMove = 614;
   }
-  else if( window.outerWidth <= 740){
+else  if (window.outerWidth <= 740){
     randoming();
-    sizeMove = 280;
+    setTimeout(() => {
+      randoming();
+    }, 500);
+    sizeMove = 304;
   }
 }
 autoRun();
 
-function cardRemoving(direct){
+if(window.outerWidth > 1055){
+  cardsFriend[cardsFriend.length - 1].remove();
+}
+
+function cardRemoving(direct) {
   let counter = 0;
-  if(window.outerWidth > 1055 && direct == 'left'){
-    while(counter <= 2){
+  if (window.outerWidth > 1055 && direct == 'left') {
+    while (counter <= 2) {
       counter++;
-     cardsFriend = document.querySelectorAll('.box-carousel__card');
-     cardsFriend[cardsFriend.length -1].remove();
-     arrRand.shift();
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[cardsFriend.length - 1].remove();
+      arrRand.shift();
     }
-  }
-  else if(window.outerWidth > 1055 && direct == 'right'){
-    while(counter <= 2){
+  } else if (window.outerWidth > 1055 && direct == 'right') {
+    while (counter <= 2) {
       counter++;
       cardsFriend = document.querySelectorAll('.box-carousel__card');
       cardsFriend[0].remove();
       arrRand.shift();
-     }
-  }
-  else if(window.outerWidth <= 1055 && direct == 'left'){
-    while(counter <= 1){
-      counter++;
-     cardsFriend = document.querySelectorAll('.box-carousel__card');
-     cardsFriend[cardsFriend.length -1].remove();
-     arrRand.shift();
     }
-  }
-  else if(window.outerWidth <= 1055 && direct == 'right'){
-    while(counter <= 1){
+  } else if (window.outerWidth <= 1055 && window.outerWidth > 740 && direct == 'left') {
+    while (counter <= 1) {
+      counter++;
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[cardsFriend.length - 1].remove();
+      arrRand.shift();
+    }
+  } else if (window.outerWidth <= 1055 && window.outerWidth > 740 && direct == 'right') {
+    while (counter <= 1) {
       counter++;
       cardsFriend = document.querySelectorAll('.box-carousel__card');
       cardsFriend[0].remove();
       arrRand.shift();
-     }
-  }
-  else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'left'){
-    while(counter < 2){
+    }
+  } else if (window.outerWidth <= 740 && direct === 'left') {
+    while (counter < 1) {
       counter++;
-     cardsFriend = document.querySelectorAll('.box-carousel__card');
-     cardsFriend[cardsFriend.length -1].remove();
-     arrRand.shift();
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[cardsFriend.length - 1].remove();
+      arrRand.shift();
+    }
+  } else if (window.outerWidth <= 740 && direct === 'right') {
+    while (counter < 1) {
+      console.log('code 201');
+      counter++;
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      cardsFriend[0].remove();
+      arrRand.shift();
     }
   }
- else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'right'){
-  while(counter < 2){
-    counter++;
-    cardsFriend = document.querySelectorAll('.box-carousel__card');
-    cardsFriend[0].remove();
-    arrRand.shift();
-   }
-  }
+  cardsFriend = document.querySelectorAll('.box-carousel__card');
 }
 
-function cardFilling(direct){
-  if(window.outerWidth > 1055 && direct === 'right'){
-     while(cardsFriend.length != 6){
-        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-        cardAdding(rNumber,'right');
-      }
-  }
-  else if(window.outerWidth <= 1055 && direct === 'right'){
-    while(cardsFriend.length != 4){
+function cardFilling(direct) {
+  if (window.outerWidth > 1055 && direct === 'right') {
+    while (cardsFriend.length <= 6) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-      cardAdding(rNumber,'right');
+      cardAdding(rNumber, 'right');
+    }
+  } else if (window.outerWidth <= 1055 && window.outerWidth > 740 && direct === 'right') {
+    while (cardsFriend.length <= 4) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'right');
+    }
+  } else if (window.outerWidth > 1055 && direct === 'left') {
+    while (cardsFriend.length <= 6) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'left');
+    }
+  } else if (window.outerWidth <= 1055 && window.outerWidth > 740 && direct === 'left') {
+    while (cardsFriend.length <= 4) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'left');
+    }
+  } else if (window.outerWidth <= 740 && direct === 'right') {
+    while (cardsFriend.length < 2) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'right');
+    }
+  } else if (window.outerWidth <= 740 && direct === 'left') {
+    while (cardsFriend.length < 2) {
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'left');
     }
   }
-  else if(window.outerWidth > 1055 && direct === 'left'){
-    while(cardsFriend.length != 6){
-       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-       cardAdding(rNumber,'left');
-     }
-  }
-  else if(window.outerWidth <= 1055 && direct === 'left'){
-   while(cardsFriend.length != 4){
-     rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-     cardAdding(rNumber,'left');
-   }
- }
- else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'right'){
-  while(cardsFriend.length != 2){
-    rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-    cardAdding(rNumber,'right');
-  }
-}
-else if(window.outerWidth <= 740 && window.outerWidth > 1055 && direct === 'left'){
-  while(cardsFriend.length != 2){
-    rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-    cardAdding(rNumber,'left');
-  }
-}
+
 }
 
-leftBtn.onclick = function(){
-  console.log('left button');
-  if(permissionBtn === true){
-     permissing();
-     permissionBtn = false;
-    if(counterStep === 0){
+leftBtn.onclick = function () {
+  direction740 = 'left';
+  if (permissionBtn === true) {
+    movePermissing();
+    permissionBtn = false;
+    if (counterStep === 0) {
       containerCards.style.transitionDuration = 'unset';
       containerCards.style.left = (-1) * sizeMove + 'px';
       cardFilling('left');
-     setTimeout(() => {
-       containerCards.style.transitionDuration = duratinon + 'ms';
-       containerCards.style.left = 0 + 'px';
-     }, 200);
-     cardsFriend = document.querySelectorAll('.box-carousel__card');
-     counterStep = 1;
-   }
-   else if(counterStep === 1 || counterStep === 3){
-    console.log(counterStep, ' - counterStep - before');
-     let counter = 0;
-     containerCards.style.transitionDuration = 'unset';
-     containerCards.style.left = (-1) * sizeMove + 'px';
-     console.log(arrRand,' - arrRand');
-     cardRemoving('left');
-     cardFilling('left');
-     console.log(arrRand,' - arrRand');
-     setTimeout(() => {
-       containerCards.style.left = 0 + 'px';
-       containerCards.style.transitionDuration = duratinon + 'ms';
-     }, 100);
-     cardsFriend = document.querySelectorAll('.box-carousel__card');
-     counterStep = 1;
-     }
-     else if(counterStep === 2){
+      setTimeout(() => {
+        containerCards.style.transitionDuration = duratinon + 'ms';
+        containerCards.style.left = 0 + 'px';
+      }, 200);
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      counterStep = 1;
+    }
+    else if (counterStep === 1 || counterStep === 3) {
+      containerCards.style.transitionDuration = 'unset';
+      containerCards.style.left = (-1) * sizeMove + 'px';
+      console.log(arrRand, ' - arrRand');
+      cardRemoving('left');
+      cardFilling('left');
+      setTimeout(() => {
+        coinstanceChecking();
+      }, 300);
+      setTimeout(() => {
+        containerCards.style.left = 0 + 'px';
+        containerCards.style.transitionDuration = duratinon + 'ms';
+      }, 100);
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
+      counterStep = 1;
+    }
+    else if (counterStep === 2) {
       containerCards.style.left = 0 + 'px';
       counterStep = 3;
-      //containerCards.style.transitionDuration = duratinon + 'ms';
-     }
-     else if(counterStep === 4){
+    } else if (counterStep === 4) {
       containerCards.style.left = 0 + 'px';
       counterStep = 1;
-      //containerCards.style.transitionDuration = duratinon + 'ms';
-     }
+    }
   }
-  console.log(counterStep, ' - counterStep - after');
 }
 
-rigthBtn.onclick = function(){
-  console.log('right button');
-  if(permissionBtn === true){
-    permissing();
-     if(counterStep == 0){
+rigthBtn.onclick = function () {
+  direction740 = 'right';
+  if (permissionBtn === true) {
+    permissionBtn = false;
+    movePermissing();
+    if (counterStep == 0) {
       containerCards.style.transitionDuration = 'unset';
       cardFilling('right');
-       setTimeout(() => {
+      setTimeout(() => {
         containerCards.style.transitionDuration = duratinon + 'ms';
         containerCards.style.left = (-1) * sizeMove + 'px';
-       }, 100);
-       counterStep = 4;
-       cardsFriend = document.querySelectorAll('.box-carousel__card');
+      }, 100);
+      counterStep = 4;
+      cardsFriend = document.querySelectorAll('.box-carousel__card');
     }
-    else if(counterStep == 1){
+    else if (counterStep == 1) {
+      containerCards.style.left = (-1) * sizeMove + 'px';
+      containerCards.style.transitionDuration = duratinon + 'ms';
+      counterStep = 2;
+    } else if (counterStep == 3) {
       containerCards.style.left = (-1) * sizeMove + 'px';
       containerCards.style.transitionDuration = duratinon + 'ms';
       counterStep = 2;
     }
-    else if(counterStep == 3){
-      containerCards.style.left = (-1) * sizeMove + 'px';
-      containerCards.style.transitionDuration = duratinon + 'ms';
-      counterStep = 2;
-    }
-    else if(counterStep == 4 || counterStep == 2){
-      let counter = 0;
-        containerCards.style.transitionDuration = 'unset';
-        containerCards.style.left = 0 + 'px';
-        cardRemoving('right');
-        cardFilling('right');
-        setTimeout(() => {
+    else if (counterStep == 4 || counterStep == 2) {
+      containerCards.style.transitionDuration = 'unset';
+      containerCards.style.left = 0 + 'px';
+      cardRemoving('right');
+      cardFilling('right');
+      setTimeout(() => {
+        coinstanceChecking();
+      }, 300);
+      setTimeout(() => {
         containerCards.style.transitionDuration = duratinon + 'ms';
         containerCards.style.left = (-1) * sizeMove + 'px';
       }, 100);
       cardsFriend = document.querySelectorAll('.box-carousel__card');
     }
   }
-  console.log(counterStep, ' - counterStep - after');
 }
 
-function cardAdding(rNumber,direct){
-  console.log(arrRand, ' - arrRand cardAdding');
- //   for(let i = 0; cardsFriend.length > i; i++){
-      //  console.log(cardsFriend[i].id);
- //     if(!cardsFriend[i].id != (arrPetsInfo[rNumber].name)){
-        if(!arrRand.includes(rNumber)){
-          let cardClone;
-          cardClone = cardInit.cloneNode(true);
+function cardAdding(rNumber, direct) {
+ // console.log(arrRand, ' - arrRand cardAdding');
+ //cardsFriend = document.querySelectorAll('.box-carousel__card');
+ // for (let i = 0; cardsFriend.length > i; i++) {
+   // if (!cardsFriend[i].id != (arrPetsInfo[rNumber].name)) {
+      if (!arrRand.includes(rNumber)) {
+        let cardClone;
+        cardClone = cardInit.cloneNode(true);
         arrRand.push(rNumber);
         cardClone.childNodes[3].innerText = `${arrPetsInfo[rNumber].name}`;
         cardClone.childNodes[1].childNodes[1].src = `${arrPetsInfo[rNumber].img}`;
         cardClone.id = `${arrPetsInfo[rNumber].name}`;
-        if(direct == 'left'){
+        
+        cardClone.addEventListener('click', function () {
+          popUp.classList.add('tech-visible');
+          document.body.style.overflow = 'hidden';
+          if (cardClone.id == 'Katrine') {
+            photo.src = arrPetsInfo[4].img;
+            name.innerText = arrPetsInfo[4].name;
+            species.innerText = arrPetsInfo[4].breed;
+            about.innerText = arrPetsInfo[4].description;
+            age.innerText = arrPetsInfo[4].age;
+            inocul.innerText = arrPetsInfo[4].inoculations;
+            disease.innerText = arrPetsInfo[4].diseases;
+            parasite.innerText = arrPetsInfo[4].parasites;
+          } else if (cardClone.id == 'Jennifer') {
+            photo.src = arrPetsInfo[0].img;
+            name.innerText = arrPetsInfo[0].name;
+            species.innerText = arrPetsInfo[0].breed;
+            about.innerText = arrPetsInfo[0].description;
+            age.innerText = arrPetsInfo[0].age;
+            inocul.innerText = arrPetsInfo[0].inoculations;
+            disease.innerText = arrPetsInfo[0].diseases;
+            parasite.innerText = arrPetsInfo[0].parasites;
+          } else if (cardClone.id == 'Woody') {
+            photo.src = arrPetsInfo[2].img;
+            name.innerText = arrPetsInfo[2].name;
+            species.innerText = arrPetsInfo[2].breed;
+            about.innerText = arrPetsInfo[2].description;
+            age.innerText = arrPetsInfo[2].age;
+            inocul.innerText = arrPetsInfo[2].inoculations;
+            disease.innerText = arrPetsInfo[2].diseases;
+            parasite.innerText = arrPetsInfo[2].parasites;
+          } else if (cardClone.id == 'Sophia') {
+            photo.src = arrPetsInfo[1].img;
+            name.innerText = arrPetsInfo[1].name;
+            species.innerText = arrPetsInfo[1].breed;
+            about.innerText = arrPetsInfo[1].description;
+            age.innerText = arrPetsInfo[1].age;
+            inocul.innerText = arrPetsInfo[1].inoculations;
+            disease.innerText = arrPetsInfo[1].diseases;
+            parasite.innerText = arrPetsInfo[1].parasites;
+          } else if (cardClone.id == 'Timmy') {
+            photo.src = arrPetsInfo[5].img;
+            name.innerText = arrPetsInfo[5].name;
+            species.innerText = arrPetsInfo[5].breed;
+            about.innerText = arrPetsInfo[5].description;
+            age.innerText = arrPetsInfo[5].age;
+            inocul.innerText = arrPetsInfo[5].inoculations;
+            disease.innerText = arrPetsInfo[5].diseases;
+            parasite.innerText = arrPetsInfo[5].parasites;
+          } else if (cardClone.id == 'Charly') {
+            photo.src = arrPetsInfo[7].img;
+            name.innerText = arrPetsInfo[7].name;
+            species.innerText = arrPetsInfo[7].breed;
+            about.innerText = arrPetsInfo[7].description;
+            age.innerText = arrPetsInfo[7].age;
+            inocul.innerText = arrPetsInfo[7].inoculations;
+            disease.innerText = arrPetsInfo[7].diseases;
+            parasite.innerText = arrPetsInfo[7].parasites;
+          } else if (cardClone.id == 'Scarlett') {
+            photo.src = arrPetsInfo[3].img;
+            name.innerText = arrPetsInfo[3].name;
+            species.innerText = arrPetsInfo[3].breed;
+            about.innerText = arrPetsInfo[3].description;
+            age.innerText = arrPetsInfo[3].age;
+            inocul.innerText = arrPetsInfo[3].inoculations;
+            disease.innerText = arrPetsInfo[3].diseases;
+            parasite.innerText = arrPetsInfo[3].parasites;
+          } else if (cardClone.id == 'Freddie') {
+            photo.src = arrPetsInfo[6].img;
+            name.innerText = arrPetsInfo[6].name;
+            species.innerText = arrPetsInfo[6].breed;
+            about.innerText = arrPetsInfo[6].description;
+            age.innerText = arrPetsInfo[6].age;
+            inocul.innerText = arrPetsInfo[6].inoculations;
+            disease.innerText = arrPetsInfo[6].diseases;
+            parasite.innerText = arrPetsInfo[6].parasites;
+          }
+        })
+        if (direct == 'left') {
           containerCards.prepend(cardClone);
-        }
-        else if(direct == 'right'){
+          cardsFriend = document.querySelectorAll('.box-carousel__card');
+        } else if (direct == 'right') {
           containerCards.append(cardClone);
+          cardsFriend = document.querySelectorAll('.box-carousel__card');
         }
       }
-  //  }
- //   }
-    cardsFriend = document.querySelectorAll('.box-carousel__card');
+   // }
+  //}
+}
+function arrFiling() {
+  for (let i = 0; arrPetsInfo.length > i; i++) {
+    let cardClone;
+    cardClone = cardInit.cloneNode(true);
+    cardClone.childNodes[3].innerText = `${arrPetsInfo[i].name}`;
+    cardClone.childNodes[1].childNodes[1].src = `${arrPetsInfo[i].img}`;
+    collectionCards.push(cardClone);
+  }
+  for (let i = 0; collectionCards.length > i; i++) {
+    collectionCards[i].addEventListener('click', function () {
+      console.log(collectionCards[i].id);
+       popUp.classList.add('tech-visible');
+          document.body.style.overflow = 'hidden';
+          collectionCards[i].id = arrPetsInfo[i].name;
+          if (collectionCards.id == 'Katrine') {
+            photo.src = arrPetsInfo[4].img;
+            name.innerText = arrPetsInfo[4].name;
+            species.innerText = arrPetsInfo[4].breed;
+            about.innerText = arrPetsInfo[4].description;
+            age.innerText = arrPetsInfo[4].age;
+            inocul.innerText = arrPetsInfo[4].inoculations;
+            disease.innerText = arrPetsInfo[4].diseases;
+            parasite.innerText = arrPetsInfo[4].parasites;
+          } else if (collectionCards.id == 'Jennifer') {
+            photo.src = arrPetsInfo[0].img;
+            name.innerText = arrPetsInfo[0].name;
+            species.innerText = arrPetsInfo[0].breed;
+            about.innerText = arrPetsInfo[0].description;
+            age.innerText = arrPetsInfo[0].age;
+            inocul.innerText = arrPetsInfo[0].inoculations;
+            disease.innerText = arrPetsInfo[0].diseases;
+            parasite.innerText = arrPetsInfo[0].parasites;
+          } else if (collectionCards.id == 'Woody') {
+            photo.src = arrPetsInfo[2].img;
+            name.innerText = arrPetsInfo[2].name;
+            species.innerText = arrPetsInfo[2].breed;
+            about.innerText = arrPetsInfo[2].description;
+            age.innerText = arrPetsInfo[2].age;
+            inocul.innerText = arrPetsInfo[2].inoculations;
+            disease.innerText = arrPetsInfo[2].diseases;
+            parasite.innerText = arrPetsInfo[2].parasites;
+          } else if (collectionCards.id == 'Sophia') {
+            photo.src = arrPetsInfo[1].img;
+            name.innerText = arrPetsInfo[1].name;
+            species.innerText = arrPetsInfo[1].breed;
+            about.innerText = arrPetsInfo[1].description;
+            age.innerText = arrPetsInfo[1].age;
+            inocul.innerText = arrPetsInfo[1].inoculations;
+            disease.innerText = arrPetsInfo[1].diseases;
+            parasite.innerText = arrPetsInfo[1].parasites;
+          } else if (collectionCards.id == 'Timmy') {
+            photo.src = arrPetsInfo[5].img;
+            name.innerText = arrPetsInfo[5].name;
+            species.innerText = arrPetsInfo[5].breed;
+            about.innerText = arrPetsInfo[5].description;
+            age.innerText = arrPetsInfo[5].age;
+            inocul.innerText = arrPetsInfo[5].inoculations;
+            disease.innerText = arrPetsInfo[5].diseases;
+            parasite.innerText = arrPetsInfo[5].parasites;
+          } else if (collectionCards.id == 'Charly') {
+            photo.src = arrPetsInfo[7].img;
+            name.innerText = arrPetsInfo[7].name;
+            species.innerText = arrPetsInfo[7].breed;
+            about.innerText = arrPetsInfo[7].description;
+            age.innerText = arrPetsInfo[7].age;
+            inocul.innerText = arrPetsInfo[7].inoculations;
+            disease.innerText = arrPetsInfo[7].diseases;
+            parasite.innerText = arrPetsInfo[7].parasites;
+          } else if (collectionCards.id == 'Scarlett') {
+            photo.src = arrPetsInfo[3].img;
+            name.innerText = arrPetsInfo[3].name;
+            species.innerText = arrPetsInfo[3].breed;
+            about.innerText = arrPetsInfo[3].description;
+            age.innerText = arrPetsInfo[3].age;
+            inocul.innerText = arrPetsInfo[3].inoculations;
+            disease.innerText = arrPetsInfo[3].diseases;
+            parasite.innerText = arrPetsInfo[3].parasites;
+          } else if (collectionCards.id == 'Freddie') {
+            photo.src = arrPetsInfo[6].img;
+            name.innerText = arrPetsInfo[6].name;
+            species.innerText = arrPetsInfo[6].breed;
+            about.innerText = arrPetsInfo[6].description;
+            age.innerText = arrPetsInfo[6].age;
+            inocul.innerText = arrPetsInfo[6].inoculations;
+            disease.innerText = arrPetsInfo[6].diseases;
+            parasite.innerText = arrPetsInfo[6].parasites;
+          }
+        })
+  }
+  cardsFriend = document.querySelectorAll('.box-carousel__card');
+}
+
+
+
+function coinstanceChecking(){
+  let rand;
+  cardsFriend = document.querySelectorAll('.box-carousel__card');
+  for(let q = 0; cardsFriend.length > q; q++){
+    for(let i = q+1; cardsFriend.length > i; i++){
+       if(cardsFriend[q].id === cardsFriend[i].id){
+        console.log('coinstance',q,cardsFriend[q].id);
+        rand = Math.floor(Math.random() * (arrPetsInfo.length));
+         let rem = document.getElementById(`${cardsFriend[i].id}`);
+         let parent = rem.parentNode;
+         collectionCards[rand].id = arrPetsInfo[rand].name;
+         parent.replaceChild(collectionCards[rand], rem);
+     //  cardList.replaceChild(collectionCards[rand],cardsFriend[i]);
+        coinstanceChecking();
+       // break;
+      }
+    }
+  }
 }
 
 function randoming(){
+  containerCards.style.left = '0px';
   let rNumber;
-  if(window.outerWidth > 1055){
-  while(arrRand.length != 3){
+  cardsFriend = document.querySelectorAll('.box-carousel__card');
+  if (window.outerWidth > 1055) {
+    while (arrRand.length < 3) {
       rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-      cardAdding(rNumber,'left');
+      cardAdding(rNumber, 'left');
     }
-    cardsFriend[3].remove();
+    cardsFriend = document.querySelectorAll('.box-carousel__card');
   }
-    else if(window.outerWidth <= 1055 && window.outerWidth > 740){
-      cardsFriend.forEach(function(item){
-        item.remove();
-      })
-      arrRand.length = 0;
-      while(arrRand.length != 2){
-        rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
-        cardAdding(rNumber,'left');
-      }
-      cardsFriend = document.querySelectorAll('.box-carousel__card');
-
+  else if (window.outerWidth <= 1055 && window.outerWidth > 740) {
+    cardsFriend.forEach(function (item) {
+      item.remove();
+    })
+    arrRand.length = 0;
+    while (arrRand.length < 2) {
+      rNumber = Math.floor(Math.random() * (arrPetsInfo.length));
+      cardAdding(rNumber, 'left');
     }
-    else if(window.outerWidth <= 740){
-      cardsFriend.forEach(function(item){
-        item.remove();
-      })
-      arrRand.length = 0;
-      while(arrRand.length != 1){
-        rNumber = Math.floor(Math.random() * (7));
-        cardAdding(rNumber,'left');
-      }
-      cardsFriend = document.querySelectorAll('.box-carousel__card');
+    cardsFriend = document.querySelectorAll('.box-carousel__card');
 
+  }
+  else if (window.outerWidth <= 740) {
+    cardsFriend.forEach(function (item) {
+      item.remove();
+    })
+    arrRand.length = 0;
+    while (arrRand.length < 1) {
+      rNumber = Math.floor(Math.random() * (7));
+      cardAdding(rNumber, 'left');
     }
-       cardsFriend = document.querySelectorAll('.box-carousel__card');
+    cardsFriend = document.querySelectorAll('.box-carousel__card');
+  }
 }
 
 randoming();
 
-cardsFriend.forEach(function(item){
-  item.addEventListener('click', function(){
-    popUp.classList.add('tech-visible');
-    document.body.style.overflow = 'hidden';
-    console.log(item.id);
-    if(item.id == 'Katrine'){
+
+let limiterLenght = document.querySelector('.box-carousel__limiter-length ');
+
+   limiterLenght.addEventListener('click',function(){
+    if(window.outerWidth < 740){
+      let index;
+      if(direction740 == 'right'){
+        index = 1;
+      }
+      else if(direction740 == 'left'){
+        index = 0
+      }
+      popUp.classList.add('tech-visible');
+      document.body.style.overflow = 'hidden';
+     if (cardsFriend[index].id == 'Katrine') {
       photo.src = arrPetsInfo[4].img;
       name.innerText = arrPetsInfo[4].name;
       species.innerText = arrPetsInfo[4].breed;
@@ -394,8 +622,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[4].inoculations;
       disease.innerText = arrPetsInfo[4].diseases;
       parasite.innerText = arrPetsInfo[4].parasites;
-    }
-    else if(item.id == 'Jennifer'){
+    } else if (cardsFriend[index].id == 'Jennifer') {
       photo.src = arrPetsInfo[0].img;
       name.innerText = arrPetsInfo[0].name;
       species.innerText = arrPetsInfo[0].breed;
@@ -404,8 +631,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[0].inoculations;
       disease.innerText = arrPetsInfo[0].diseases;
       parasite.innerText = arrPetsInfo[0].parasites;
-    }
-    else if(item.id == 'Woody'){
+    } else if (cardsFriend[index].id == 'Woody') {
       photo.src = arrPetsInfo[2].img;
       name.innerText = arrPetsInfo[2].name;
       species.innerText = arrPetsInfo[2].breed;
@@ -414,8 +640,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[2].inoculations;
       disease.innerText = arrPetsInfo[2].diseases;
       parasite.innerText = arrPetsInfo[2].parasites;
-    }
-    else if(item.id == 'Sophia'){
+    } else if (cardsFriend[index].id == 'Sophia') {
       photo.src = arrPetsInfo[1].img;
       name.innerText = arrPetsInfo[1].name;
       species.innerText = arrPetsInfo[1].breed;
@@ -424,8 +649,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[1].inoculations;
       disease.innerText = arrPetsInfo[1].diseases;
       parasite.innerText = arrPetsInfo[1].parasites;
-    }
-    else if(item.id == 'Timmy'){
+    } else if (cardsFriend[index].id == 'Timmy') {
       photo.src = arrPetsInfo[5].img;
       name.innerText = arrPetsInfo[5].name;
       species.innerText = arrPetsInfo[5].breed;
@@ -434,8 +658,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[5].inoculations;
       disease.innerText = arrPetsInfo[5].diseases;
       parasite.innerText = arrPetsInfo[5].parasites;
-    }
-    else if(item.id == 'Charly'){
+    } else if (cardsFriend[index].id == 'Charly') {
       photo.src = arrPetsInfo[7].img;
       name.innerText = arrPetsInfo[7].name;
       species.innerText = arrPetsInfo[7].breed;
@@ -444,8 +667,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[7].inoculations;
       disease.innerText = arrPetsInfo[7].diseases;
       parasite.innerText = arrPetsInfo[7].parasites;
-    }
-    else if(item.id == 'Scarlett'){
+    } else if (cardsFriend[index].id == 'Scarlett') {
       photo.src = arrPetsInfo[3].img;
       name.innerText = arrPetsInfo[3].name;
       species.innerText = arrPetsInfo[3].breed;
@@ -454,8 +676,7 @@ cardsFriend.forEach(function(item){
       inocul.innerText = arrPetsInfo[3].inoculations;
       disease.innerText = arrPetsInfo[3].diseases;
       parasite.innerText = arrPetsInfo[3].parasites;
-    }
-    else if(item.id == 'Freddie'){
+    } else if (cardsFriend[index].id == 'Freddie') {
       photo.src = arrPetsInfo[6].img;
       name.innerText = arrPetsInfo[6].name;
       species.innerText = arrPetsInfo[6].breed;
@@ -465,5 +686,104 @@ cardsFriend.forEach(function(item){
       disease.innerText = arrPetsInfo[6].diseases;
       parasite.innerText = arrPetsInfo[6].parasites;
     }
+  }
   })
-})
+
+setTimeout(() => {
+    autoRun();
+}, 500);
+setTimeout(() => {
+  randoming();
+}, 500);
+arrFiling(); 
+// limiterLenght.addEventListener('click',function(){
+//   console.log('limiter');
+// })
+// cardsFriend.forEach(function(item){
+//   item.addEventListener('click', function(){
+//     popUp.classList.add('tech-visible');
+//     document.body.style.overflow = 'hidden';
+//     console.log(item.id);
+//     if(item.id == 'Katrine'){
+//       photo.src = arrPetsInfo[4].img;
+//       name.innerText = arrPetsInfo[4].name;
+//       species.innerText = arrPetsInfo[4].breed;
+//       about.innerText = arrPetsInfo[4].description;
+//       age.innerText = arrPetsInfo[4].age;
+//       inocul.innerText = arrPetsInfo[4].inoculations;
+//       disease.innerText = arrPetsInfo[4].diseases;
+//       parasite.innerText = arrPetsInfo[4].parasites;
+//     }
+//     else if(item.id == 'Jennifer'){
+//       photo.src = arrPetsInfo[0].img;
+//       name.innerText = arrPetsInfo[0].name;
+//       species.innerText = arrPetsInfo[0].breed;
+//       about.innerText = arrPetsInfo[0].description;
+//       age.innerText = arrPetsInfo[0].age;
+//       inocul.innerText = arrPetsInfo[0].inoculations;
+//       disease.innerText = arrPetsInfo[0].diseases;
+//       parasite.innerText = arrPetsInfo[0].parasites;
+//     }
+//     else if(item.id == 'Woody'){
+//       photo.src = arrPetsInfo[2].img;
+//       name.innerText = arrPetsInfo[2].name;
+//       species.innerText = arrPetsInfo[2].breed;
+//       about.innerText = arrPetsInfo[2].description;
+//       age.innerText = arrPetsInfo[2].age;
+//       inocul.innerText = arrPetsInfo[2].inoculations;
+//       disease.innerText = arrPetsInfo[2].diseases;
+//       parasite.innerText = arrPetsInfo[2].parasites;
+//     }
+//     else if(item.id == 'Sophia'){
+//       photo.src = arrPetsInfo[1].img;
+//       name.innerText = arrPetsInfo[1].name;
+//       species.innerText = arrPetsInfo[1].breed;
+//       about.innerText = arrPetsInfo[1].description;
+//       age.innerText = arrPetsInfo[1].age;
+//       inocul.innerText = arrPetsInfo[1].inoculations;
+//       disease.innerText = arrPetsInfo[1].diseases;
+//       parasite.innerText = arrPetsInfo[1].parasites;
+//     }
+//     else if(item.id == 'Timmy'){
+//       photo.src = arrPetsInfo[5].img;
+//       name.innerText = arrPetsInfo[5].name;
+//       species.innerText = arrPetsInfo[5].breed;
+//       about.innerText = arrPetsInfo[5].description;
+//       age.innerText = arrPetsInfo[5].age;
+//       inocul.innerText = arrPetsInfo[5].inoculations;
+//       disease.innerText = arrPetsInfo[5].diseases;
+//       parasite.innerText = arrPetsInfo[5].parasites;
+//     }
+//     else if(item.id == 'Charly'){
+//       photo.src = arrPetsInfo[7].img;
+//       name.innerText = arrPetsInfo[7].name;
+//       species.innerText = arrPetsInfo[7].breed;
+//       about.innerText = arrPetsInfo[7].description;
+//       age.innerText = arrPetsInfo[7].age;
+//       inocul.innerText = arrPetsInfo[7].inoculations;
+//       disease.innerText = arrPetsInfo[7].diseases;
+//       parasite.innerText = arrPetsInfo[7].parasites;
+//     }
+//     else if(item.id == 'Scarlett'){
+//       photo.src = arrPetsInfo[3].img;
+//       name.innerText = arrPetsInfo[3].name;
+//       species.innerText = arrPetsInfo[3].breed;
+//       about.innerText = arrPetsInfo[3].description;
+//       age.innerText = arrPetsInfo[3].age;
+//       inocul.innerText = arrPetsInfo[3].inoculations;
+//       disease.innerText = arrPetsInfo[3].diseases;
+//       parasite.innerText = arrPetsInfo[3].parasites;
+//     }
+//     else if(item.id == 'Freddie'){
+//       photo.src = arrPetsInfo[6].img;
+//       name.innerText = arrPetsInfo[6].name;
+//       species.innerText = arrPetsInfo[6].breed;
+//       about.innerText = arrPetsInfo[6].description;
+//       age.innerText = arrPetsInfo[6].age;
+//       inocul.innerText = arrPetsInfo[6].inoculations;
+//       disease.innerText = arrPetsInfo[6].diseases;
+//       parasite.innerText = arrPetsInfo[6].parasites;
+//     }
+//   })
+// })
+

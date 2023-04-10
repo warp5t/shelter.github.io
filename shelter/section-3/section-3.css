@@ -65,7 +65,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 0 80px 0;
+  padding: 0 0 61px 0;
 }
 
 @media(max-width:800px){
@@ -84,6 +84,7 @@
   width: 990px;
   height: 460px;
   overflow: hidden;
+  /* background-color: greenyellow; */
 }
 
 @media(max-width:1170px){
@@ -93,7 +94,7 @@
 }
 @media(max-width:1055px){
   .box-carousel__limiter-length{
-    width: 580px;
+    width: 591px;
   }
 }
 @media(max-width:740px){
@@ -146,6 +147,13 @@
   transform: scale(1.05, 1.05);
   transition-duration: 0.2s;
 }
+@media (hover: hover){
+  .box-carousel__card:hover{
+    cursor: pointer;
+  transform: scale(1.05, 1.05);
+  transition-duration: 0.2s;
+  }
+}
 @media(max-width:800px) {
   .box-carousel__card{
     pointer-events: none;
@@ -177,7 +185,7 @@
 .box-carousel__button {
   border: 2px solid #F1CDB3;
   border-radius: 100px;
-  padding: 15px 60px;
+  padding: 15px 45px;
   box-sizing: content-box;
   background: #FAFAFA;
   transition-duration: 0.5s;
@@ -194,7 +202,12 @@ color: #292929;
   transition-duration: 0.2s;
   background: #FDDCC4;
 }
-
+@media (hover: hover){
+  .box-carousel__button:hover {
+    transition-duration: 0.2s;
+    background: #FDDCC4;
+  }
+}
 @media(max-width:770px){
   .box-carousel__button {
     padding: 15px 45px;
@@ -219,6 +232,12 @@ color: #292929;
 .our-friends__button:hover {
   transition-duration: 0.2s;
   background: #FDDCC4;
+}
+@media (hover: hover){
+  .our-friends__button:hover {
+    transition-duration: 0.2s;
+    background: #FDDCC4;
+  }
 }
 
 .our-friends__text {
@@ -253,6 +272,13 @@ color: #292929;
   cursor: pointer;
   background: #FDDCC4;
 }
+@media (hover: hover){
+  .box-carousel__button-arrow-L:hover {
+    transition-duration: 0.2s;
+    cursor: pointer;
+    background: #FDDCC4;
+  }
+}
 @media(max-width:1240px){
   .box-carousel__button-arrow-L {
     margin: 0 12px 0 0;
@@ -283,7 +309,13 @@ color: #292929;
   cursor: pointer;
   background: #FDDCC4;
 }
-
+@media (hover: hover){
+  .box-carousel__button-arrow-R:hover {
+    transition-duration: 0.2s;
+    cursor: pointer;
+    background: #FDDCC4;
+  }
+}
 @media(max-width:1240px){
   .box-carousel__button-arrow-R {
     margin: 0 0px 0 12px;
@@ -334,6 +366,18 @@ color: #292929;
   background: #FAFAFA;
   color: #000000;
 }
+@media(max-width:1055px){
+  .popUp__content {
+    width: 630px;
+    height: 350px;
+  }
+}
+@media(max-width:740px){
+  .popUp__content {
+    width: 240px;
+    height: 100%;
+  }
+}
 
 .popUp__close{
   display: flex;
@@ -350,6 +394,30 @@ color: #292929;
 .popUp__close:hover{
   cursor: pointer;
 }
+@media (hover: hover){
+  .popUp__close:hover{
+    cursor: pointer;
+  }
+}
+@media(max-width:740px){
+  .popUp__close{
+    right: -30px;
+  }
+}
+.popUp__close:hover{
+  cursor: pointer;
+  border: 2px solid #ec690c;
+  background-color: #ecbd9b;
+  transition-duration: 0.5s;
+}
+@media (hover: hover){
+  .popUp__close:hover{
+    cursor: pointer;
+    border: 2px solid #ec690c;
+    background-color: #ecbd9b;
+    transition-duration: 0.5s;
+  }
+}
 
 .popUp__wrap-cross{
   padding: 4px 0 0 0;
@@ -365,10 +433,32 @@ color: #292929;
   width: 500px;
   height: 500px;
 }
+@media(max-width:1055px){
+  .popUp__photo {
+    width: 344px;
+    height: 344px;
+  }
+}
+@media(max-width:740px){
+  .popUp__photo {
+    display: none;
+  }
+}
+
 .popUp__wrap-info {
   display: flex;
   flex-direction: column;
   padding: 50px 20px 88px 20px;
+}
+@media(max-width:1055px){
+  .popUp__wrap-info {
+    padding: 10px 10px 40px 10px;
+  }
+}
+@media(max-width:740px){
+  .popUp__wrap-info {
+    padding:10px;
+  }
 }
 .popUp__name {
 font-family: 'Georgia';
@@ -380,6 +470,11 @@ letter-spacing: 0.09em;
 color: #000000;
 padding: 0 0 10px 0;
 }
+@media(max-width:740px){
+  .popUp__name {
+    text-align: center;
+  }
+}
 .popUp__species {
 font-family: 'Georgia';
 font-style: normal;
@@ -390,6 +485,16 @@ letter-spacing: 0.06em;
 color: #000000;
 padding: 0 0 40px 0;
 }
+@media(max-width:1055px){
+  .popUp__species {
+    padding: 0 0 20px 0;
+  }
+}
+@media(max-width:740px){
+  .popUp__species {
+    text-align: center;
+  }
+}
 .popUp__about {
 font-family: 'Georgia';
 font-style: normal;
@@ -399,6 +504,17 @@ line-height: 110%;
 letter-spacing: 0.07em;
 color: #000000;
 padding: 0 0 40px 0;
+}
+@media(max-width:1055px){
+  .popUp__about {
+    font-size: 13px;
+    padding: 0 0 20px 0;
+  }
+}
+@media(max-width:1000px){
+  .popUp__about {
+    padding: 0 0 25px 0;
+  }
 }
 .popUp__subwrapInf {
   display: flex;
@@ -416,6 +532,11 @@ padding: 0 0 40px 0;
   display: flex;
   flex-direction: row;
   padding: 0 0 10px 0;
+}
+@media(max-width:740px){
+  .popUp__wrap-age {
+  padding: 0 0 5px 0;
+  }
 }
 .popUp__age {
   font-family: 'Georgia';
@@ -440,6 +561,11 @@ color: #000000;
   flex-direction: row;
   padding: 0 0 10px 0;
 }
+@media(max-width:740px){
+  .popUp__wrap-inocul {
+  padding: 0 0 5px 0;
+  }
+}
 .popUp__inocul {
   font-family: 'Georgia';
   font-style: normal;
@@ -462,6 +588,11 @@ color: #000000;
   display: flex;
   flex-direction: row;
   padding: 0 0 10px 0;
+}
+@media(max-width:740px){
+  .popUp__wrap-disease {
+   padding: 0 0 5px 0;
+  }
 }
 .popUp__disease {
   font-family: 'Georgia';
@@ -494,6 +625,11 @@ color: #000000;
   line-height: 110%;
   letter-spacing: 0.06em;
   color: #000000;
+}
+@media(max-width:740px){
+  .popUp__wrap-parasite {
+   padding: 0 0 5px 0;
+  }
 }
 .popUp__parasite-term {
   font-family: 'Georgia';

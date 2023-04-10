@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="section-1/section-1.css">
   <link rel="stylesheet" href="../footer/footer.css">
 </head>
-<body>
+<body class="body" id="body">
   <div class="wrap">
+    <div class="shadow-pets"></div>
     <header class="header">
       <div class="header__container _container">
         <div class="header__wrap-logo">
@@ -45,10 +46,71 @@
             <div class="burger__line"></div>
           </div>
         </div>
+        <div class="header__menu-burger menu-burger">
+          <div class="menu-burger__container">
+            <nav class="menu-burger__navigation">
+              <ul class="menu-burger__navigation-list">
+                <li class="menu-burger__navigation-item" id="about-shelter">
+                  <a class="menu-burger__item"  href="../index.html">About the shelter</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="pets">
+                  <a class="menu-burger__item _item-choice" href="#">Our pets</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="helpLink">
+                  <a class="menu-burger__item" href="../index.html#help">Help the shelter</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="contacts">
+                  <a class="menu-burger__item" href="#footer">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main">
       <section class="our-friends">
+        <div class="carousel__popUp popUp" id="popUp">
+                <div class="popUp__container" id="container-popUp">
+                  <div class="popUp__content">
+                    <div class="popUp__close">
+                      <div class="popUp__wrap-cross">
+                        <img class="popUp__icon-cross" src="section-1/Vector.svg" alt="cross">
+                      </div>
+                    </div>
+                    <div class="popUp__wrap-photo">
+                      <img class="popUp__photo" src="" alt="photoPet">
+                    </div>
+                    <div class="popUp__wrap-info">
+                      <div class="popUp__name"></div>
+                      <div class="popUp__species"></div>
+                      <div class="popUp__about"></div>
+                      <div class="popUp__subwrapInf">
+                        <div class="popUp__wrap-age">
+                          <div class="popUp__dot"></div>
+                          <div class="popUp__age">Age:&nbsp</div>
+                          <div class="pop__age-term"></div>
+                        </div>
+                        <div class="popUp__wrap-inocul">
+                          <div class="popUp__dot"></div>
+                          <div class="popUp__inocul">Inoculations:&nbsp</div>
+                          <div class="popUp__inocul-term"></div>
+                        </div>
+                        <div class="popUp__wrap-disease">
+                          <div class="popUp__dot"></div>
+                          <div class="popUp__disease">Diseases:&nbsp</div>
+                          <div class="popUp__disease-term"></div>
+                        </div>
+                        <div class="popUp__wrap-parasite">
+                          <div class="popUp__dot"></div>
+                          <div class="popUp__parasite">Parasites:&nbsp</div>
+                          <div class="popUp__parasite-term"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         <div class="our-friends__container _container">
           <h2 class="our-friends__title">
             Our friends who <br> are looking for a house
@@ -56,7 +118,7 @@
           <div class="our-friends__wrap-carousel carousel">
             <div class="carousel__box-cards">
               <div class="carousel__mover">
-                <div class="carousel__card">
+                <div class="carousel__card" id="Katrine">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-katrine.png" alt="pet">
                   </div>
@@ -65,7 +127,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Jennifer">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-jennifer.png" alt="pet">
                   </div>
@@ -74,7 +136,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Woody">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-woody.png" alt="pet">
                   </div>
@@ -83,7 +145,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Sophia">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-sofa.jpg" alt="pet">
                   </div>
@@ -92,7 +154,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Timmy">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-timmy.png" alt="pet">
                   </div>
@@ -101,7 +163,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Charly">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-charly.jpg" alt="pet">
                   </div>
@@ -110,7 +172,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Scarlett">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-scarlet.png" alt="pet">
                   </div>
@@ -119,7 +181,7 @@
                     <button class="carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="carousel__card">
+                <div class="carousel__card" id="Freddie">
                   <div class="carousel__wrap-photo">
                     <img class="carousel__photo" src="section-1/pets-fred.png" alt="pet">
                   </div>
@@ -134,8 +196,8 @@
               <div class="our-friends__force-L">&lt;&lt;</div>
               <div class="our-friends__normal-L">&lt;</div>
               <div class="our-friends__number">1</div>
-              <div class="our-friends__force-R">&gt;</div>
-              <div class="our-friends__normal-R">&gt;&gt;</div>
+              <div class="our-friends__normal-R">&gt;</div>
+              <div class="our-friends__force-R">&gt;&gt;</div>
             </div>
           </div>
         </div>
@@ -185,6 +247,9 @@
       </div>
     </footer>
   </div>
-  <script src="../common/common.js"></script>
+  <!-- <script src="../common/common.js"></script> -->
+  <script src="header/header-pets.js"></script>
+  <script src="section-1/section-1-pets.js"></script>
 </body>
+
 </html>

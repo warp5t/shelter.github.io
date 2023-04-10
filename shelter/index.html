@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="section-5/section-5.css">
   <link rel="stylesheet" href="footer/footer.css">
 </head>
-
-<body>
+<body class="body" id="body">
   <div class="wrap">
+    <div class="shadow"></div>
     <header class="header">
       <div class="header__container _container">
           <div class="header__wrap-logo">
@@ -38,7 +38,7 @@
             <li class="header__navigation-item">
               <a class="header__item" href="#help">Help the shelter</a>
             </li>
-            <li class="header__navigation-item">
+            <li class="header__navigation-item" onclick="delaying">
               <a class="header__item" href="#footer">Contacts</a>
             </li>
           </ul>
@@ -48,6 +48,26 @@
             <div class="burger__line"></div>
             <div class="burger__line"></div>
             <div class="burger__line"></div>
+          </div>
+        </div>
+        <div class="header__menu-burger menu-burger">
+          <div class="menu-burger__container">
+            <nav class="menu-burger__navigation">
+              <ul class="menu-burger__navigation-list">
+                <li class="menu-burger__navigation-item">
+                  <a class="menu-burger__item _item-choice" id="shelter" href="#">About the shelter</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="pets">
+                  <a class="menu-burger__item" href="ourPets/index.html">Our pets</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="helpLink">
+                  <a class="menu-burger__item" href="#help">Help the shelter</a>
+                </li>
+                <li class="menu-burger__navigation-item" id="contacts">
+                  <a class="menu-burger__item" href="#footer">Contacts</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -93,6 +113,47 @@
         </div>
       </section>
       <section class="our-friends" id="outFriends">
+        <div class="our-friends__popUp popUp" id="popUp">
+          <div class="popUp__container">
+            <div class="popUp__content">
+              <div class="popUp__close">
+                <div class="popUp__wrap-cross">
+                  <img class="popUp__icon-cross" src="section-3/Vector.svg" alt="cross">
+                </div>
+              </div>
+              <div class="popUp__wrap-photo">
+                <img class="popUp__photo" src="" alt="photoPet">
+              </div>
+              <div class="popUp__wrap-info">
+                <div class="popUp__name"></div>
+                <div class="popUp__species"></div>
+                <div class="popUp__about"></div>
+                <div class="popUp__subwrapInf">
+                  <div class="popUp__wrap-age">
+                    <div class="popUp__dot"></div>
+                    <div class="popUp__age">Age:&nbsp</div>
+                    <div class="pop__age-term"></div>
+                  </div>
+                  <div class="popUp__wrap-inocul">
+                    <div class="popUp__dot"></div>
+                    <div class="popUp__inocul">Inoculations:&nbsp</div>
+                    <div class="popUp__inocul-term"></div>
+                  </div>
+                  <div class="popUp__wrap-disease">
+                    <div class="popUp__dot"></div>
+                    <div class="popUp__disease">Diseases:&nbsp</div>
+                    <div class="popUp__disease-term"></div>
+                  </div>
+                  <div class="popUp__wrap-parasite">
+                    <div class="popUp__dot"></div>
+                    <div class="popUp__parasite">Parasites:&nbsp</div>
+                    <div class="popUp__parasite-term"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="our-friends__container _container">
           <h2 class="our-friends__title">
             Our friends who <br> are looking for a house
@@ -102,34 +163,18 @@
               <div class="box-carousel__button-arrow-L">
                 <img class="box-carousel__arrow" src="section-3/Arrow.svg" alt="arrow">
               </div>
-              <div class="box-carousel__cards-list">
+              <div class="box-carousel__limiter-length">
+                <div class="box-carousel__cards-list" id="cardList">
                 <div class="box-carousel__card">
                   <div class="box-carousel__wrap-photo">
-                    <img class="box-carousel__photo" src="section-3/pets-katrine.png" alt="pet">
+                    <img class="box-carousel__photo" src="" alt="pet">
                   </div>
-                  <div class="box-carousel__name-pet">Katrine</div>
+                  <div class="box-carousel__name-pet"></div>
                   <div class="box-carousel__wrap-button">
                     <button class="box-carousel__button">Learn more</button>
                   </div>
                 </div>
-                <div class="box-carousel__card">
-                  <div class="box-carousel__wrap-photo">
-                    <img class="box-carousel__photo" src="section-3/pets-jennifer.png" alt="pet">
-                  </div>
-                  <div class="box-carousel__name-pet">Jennifer</div>
-                  <div class="box-carousel__wrap-button">
-                    <button class="box-carousel__button">Learn more</button>
-                  </div>
-                </div>
-                <div class="box-carousel__card">
-                  <div class="box-carousel__wrap-photo">
-                    <img class="box-carousel__photo" src="section-3/pets-woody.png" alt="pet">
-                  </div>
-                  <div class="box-carousel__name-pet">Woody</div>
-                  <div class="box-carousel__wrap-button">
-                    <button class="box-carousel__button">Learn more</button>
-                  </div>
-                </div>
+              </div>
               </div>
               <div class="box-carousel__button-arrow-R">
                 <img class="box-carousel__arrow" src="section-3/Arrow(1).svg" alt="arrow">
@@ -285,5 +330,7 @@
     </footer>
   </div>
   <script src="common/common.js"></script>
+  <script src="header/header.js"></script>
+  <script src="section-3/section-3.js"></script>
 </body>
 </html>
